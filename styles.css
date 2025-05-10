@@ -1,0 +1,67 @@
+/* Custom styles for portfolio */
+
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* Custom section padding */
+section {
+    padding: 80px 0;
+}
+
+/* Header adjustments */
+header {
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    padding: 100px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Project cards */
+.card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills section */
+#skills .card {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #0062E6;
+    border-color: #0062E6;
+}
+
+.btn-primary:hover {
+    background-color: #0056CC;
+    border-color: #0056CC;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
