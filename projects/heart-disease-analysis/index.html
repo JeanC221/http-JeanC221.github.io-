@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Factores de Riesgo de Enfermedades Cardíacas | Mi Portafolio</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .project-header {
+            background: linear-gradient(to right, #005AA7, #FFFDE4);
+            padding: 80px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .analysis-section {
+            margin: 60px 0;
+        }
+        
+        .visualization {
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .visualization:hover {
+            transform: translateY(-5px);
+        }
+        
+        .visualization img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .methodology-card {
+            border-left: 4px solid #005AA7;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        .key-finding {
+            background-color: rgba(0, 90, 167, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .key-finding h5 {
+            color: #005AA7;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background-color: #eef2f7;
+            color: #005AA7;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#about">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#resume">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container text-center">
+            <h1>Análisis de Factores de Riesgo de Enfermedades Cardíacas</h1>
+            <p class="lead">Identificación de factores determinantes y desarrollo de un modelo predictivo para el diagnóstico temprano</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4">Resumen del Proyecto</h2>
+                <p>Las enfermedades cardiovasculares son la principal causa de muerte a nivel mundial. La detección temprana y la identificación de factores de riesgo son fundamentales para la prevención y el tratamiento eficaz. Este proyecto analiza un conjunto de datos con información médica de pacientes para identificar los factores más relevantes asociados con enfermedades cardíacas y desarrollar un modelo predictivo que pueda ayudar en el diagnóstico temprano.</p>
+                
+                <div class="d-flex flex-wrap justify-content-around mt-4 mb-4">
+                    <div class="bg-light p-3 rounded m-2 text-center">
+                        <strong>Tamaño de muestra:</strong>
+                        <div class="fs-4">1,025 pacientes</div>
+                    </div>
+                    <div class="bg-light p-3 rounded m-2 text-center">
+                        <strong>Variables analizadas:</strong>
+                        <div class="fs-4">13 factores clínicos</div>
+                    </div>
+                    <div class="bg-light p-3 rounded m-2 text-center">
+                        <strong>Precisión del modelo:</strong>
+                        <div class="fs-4">~85%</div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-primary" role="alert">
+                    <strong>Hallazgo principal:</strong> El tipo de dolor torácico, el número de vasos principales y la talasemia son los predictores más importantes de enfermedad cardíaca.
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Descripción del Dataset</h2>
+                    <p>El conjunto de datos "Heart Disease" contiene información médica de 1,025 pacientes con 13 atributos clínicos y una variable objetivo que indica la presencia (1) o ausencia (0) de enfermedad cardíaca. Las variables incluyen tanto factores demográficos como mediciones clínicas y resultados de pruebas médicas.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="methodology-card">
+                                <h5>Variables Demográficas</h5>
+                                <ul>
+                                    <li><strong>Edad:</strong> Edad del paciente en años</li>
+                                    <li><strong>Sexo:</strong> 0 = Mujer, 1 = Hombre</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="methodology-card">
+                                <h5>Factores de Riesgo</h5>
+                                <ul>
+                                    <li><strong>Colesterol:</strong> Nivel de colesterol sérico en mg/dl</li>
+                                    <li><strong>Presión Arterial en Reposo:</strong> Presión arterial en mm Hg</li>
+                                    <li><strong>Azúcar en Sangre en Ayunas:</strong> > 120 mg/dl (1 = Sí, 0 = No)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="methodology-card">
+                                <h5>Resultados de Pruebas</h5>
+                                <ul>
+                                    <li><strong>Resultados Electrocardiográficos:</strong> Valores 0, 1, 2</li>
+                                    <li><strong>Frecuencia Cardíaca Máxima:</strong> Valor máximo alcanzado</li>
+                                    <li><strong>Angina Inducida por Ejercicio:</strong> 0 = No, 1 = Sí</li>
+                                    <li><strong>Depresión ST:</strong> Depresión del segmento ST inducida por ejercicio</li>
+                                    <li><strong>Pendiente del Segmento ST:</strong> Valores 0, 1, 2</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="methodology-card">
+                                <h5>Diagnóstico</h5>
+                                <ul>
+                                    <li><strong>Tipo de Dolor Torácico:</strong> 4 valores (0-3)</li>
+                                    <li><strong>Número de Vasos Principales:</strong> 0-3 vasos coloreados por fluoroscopia</li>
+                                    <li><strong>Talasemia:</strong> 3 = normal; 6 = defecto fijo; 7 = defecto reversible</li>
+                                    <li><strong>Target:</strong> Presencia de enfermedad cardíaca (0 = No, 1 = Sí)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Metodología</h2>
+                    <p>Este proyecto siguió un flujo de trabajo estructurado de ciencia de datos, que incluyó las siguientes etapas:</p>
+                    
+                    <div class="accordion" id="methodologyAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    1. Exploración y Análisis de Datos
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#methodologyAccordion">
+                                <div class="accordion-body">
+                                    <p>Se realizó un análisis exploratorio detallado para entender las distribuciones de las variables, identificar valores atípicos y examinar las relaciones entre las variables. Esto incluyó:</p>
+                                    <ul>
+                                        <li>Análisis estadístico descriptivo de variables numéricas</li>
+                                        <li>Visualización de distribuciones mediante histogramas y gráficos de densidad</li>
+                                        <li>Análisis de correlación para identificar relaciones entre variables</li>
+                                        <li>Segmentación por grupos de edad, sexo y otros factores relevantes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    2. Preprocesamiento de Datos
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#methodologyAccordion">
+                                <div class="accordion-body">
+                                    <p>Antes del modelado, se prepararon los datos mediante:</p>
+                                    <ul>
+                                        <li>Tratamiento de valores faltantes (aunque este dataset no presentaba ninguno)</li>
+                                        <li>Normalización de variables numéricas mediante StandardScaler</li>
+                                        <li>Codificación adecuada de variables categóricas</li>
+                                        <li>División de datos en conjuntos de entrenamiento (75%) y prueba (25%)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    3. Modelado Predictivo
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#methodologyAccordion">
+                                <div class="accordion-body">
+                                    <p>Se implementó un enfoque de aprendizaje automático para predecir la presencia de enfermedad cardíaca:</p>
+                                    <ul>
+                                        <li>Selección del algoritmo Random Forest por su robustez y capacidad para manejar relaciones no lineales</li>
+                                        <li>Optimización de hiperparámetros mediante validación cruzada y GridSearchCV</li>
+                                        <li>Evaluación del modelo utilizando múltiples métricas (precisión, recall, F1-score)</li>
+                                        <li>Análisis de la importancia de características para identificar los factores más predictivos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    4. Evaluación e Interpretación
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#methodologyAccordion">
+                                <div class="accordion-body">
+                                    <p>La evaluación final del modelo incluyó:</p>
+                                    <ul>
+                                        <li>Matriz de confusión para analizar los tipos de errores (falsos positivos vs. falsos negativos)</li>
+                                        <li>Curva ROC y área bajo la curva (AUC) para evaluar el rendimiento general</li>
+                                        <li>Interpretación clínica de los resultados, destacando los factores de riesgo más importantes</li>
+                                        <li>Validación de los hallazgos con la literatura médica existente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <h2 class="text-center mb-5">Visualizaciones y Hallazgos Clave</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/heart_disease_by_gender.png" class="card-img-top" alt="Distribución de Enfermedad Cardíaca por Sexo">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribución de Enfermedad Cardíaca por Sexo</h5>
+                                <p class="card-text">Los hombres presentan una mayor prevalencia de enfermedad cardíaca en comparación con las mujeres en este conjunto de datos. Esta diferencia es estadísticamente significativa y concuerda con estudios epidemiológicos que indican un mayor riesgo cardiovascular en hombres, especialmente en grupos de edad media.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/heart_disease_by_age.png" class="card-img-top" alt="Distribución por Edad y Enfermedad Cardíaca">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribución por Edad y Enfermedad Cardíaca</h5>
+                                <p class="card-text">El histograma muestra que la incidencia de enfermedad cardíaca aumenta con la edad, con un pico notable en el grupo de 55-65 años. Sin embargo, también se observan casos en adultos más jóvenes (40-50 años), lo que destaca la importancia de la detección temprana y el seguimiento de factores de riesgo incluso en poblaciones más jóvenes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/correlation_matrix.png" class="card-img-top" alt="Matriz de Correlación">
+                            <div class="card-body">
+                                <h5 class="card-title">Matriz de Correlación entre Variables</h5>
+                                <p class="card-text">El análisis de correlación revela asociaciones importantes entre variables. Destaca la correlación negativa entre la frecuencia cardíaca máxima y la enfermedad cardíaca, así como correlaciones positivas con la angina inducida por ejercicio y el número de vasos principales. Estas relaciones proporcionan información valiosa sobre las interacciones entre factores de riesgo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/numerical_variables_comparison.png" class="card-img-top" alt="Comparación de Variables Numéricas">
+                            <div class="card-body">
+                                <h5 class="card-title">Comparación de Variables Numéricas Clave</h5>
+                                <p class="card-text">Los diagramas de caja muestran diferencias significativas en variables como la frecuencia cardíaca máxima y la depresión ST entre pacientes con y sin enfermedad cardíaca. Los pacientes con enfermedad cardíaca tienden a tener una frecuencia cardíaca máxima más baja y valores de depresión ST más elevados, lo que confirma la relevancia clínica de estos parámetros.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/chest_pain_vs_heart_disease.png" class="card-img-top" alt="Tipo de Dolor Torácico vs Enfermedad Cardíaca">
+                            <div class="card-body">
+                                <h5 class="card-title">Tipo de Dolor Torácico vs Enfermedad Cardíaca</h5>
+                                <p class="card-text">El gráfico muestra una clara asociación entre el tipo de dolor torácico y la presencia de enfermedad cardíaca. Notablemente, el tipo asintomático (3) y el dolor no anginoso (2) muestran patrones distintos de asociación con la enfermedad cardíaca en comparación con la angina típica (0) y atípica (1), lo que demuestra que la naturaleza del dolor torácico es un importante indicador diagnóstico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Resultados del Modelo Predictivo</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/confusion_matrix.png" class="card-img-top" alt="Matriz de Confusión">
+                                <div class="card-body">
+                                    <h5 class="card-title">Matriz de Confusión</h5>
+                                    <p class="card-text">La matriz de confusión muestra el rendimiento del modelo en términos de verdaderos positivos, falsos positivos, verdaderos negativos y falsos negativos. Nuestro modelo logra un buen equilibrio entre sensibilidad y especificidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/roc_curve.png" class="card-img-top" alt="Curva ROC">
+                                <div class="card-body">
+                                    <h5 class="card-title">Curva ROC</h5>
+                                    <p class="card-text">La curva ROC evalúa el rendimiento del modelo a diferentes umbrales de clasificación. Un área bajo la curva (AUC) cercana a 0.9 indica un excelente poder discriminativo del modelo entre pacientes con y sin enfermedad cardíaca.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <img src="images/feature_importance.png" class="card-img-top" alt="Importancia de Características">
+                        <div class="card-body">
+                            <h5 class="card-title">Importancia de Características</h5>
+                            <p class="card-text">El análisis de importancia de características revela los factores más relevantes para la predicción de enfermedad cardíaca. El tipo de dolor torácico, la presencia de talasemia (un trastorno sanguíneo hereditario) y el número de vasos principales afectados emergen como los predictores más importantes, seguidos por la edad y la depresión del segmento ST.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Hallazgos Principales y Conclusiones</h2>
+                    
+                    <div class="key-finding">
+                        <h5>1. Factores Determinantes</h5>
+                        <p>Los factores más predictivos de enfermedad cardíaca son el tipo de dolor torácico, el número de vasos principales afectados, la talasemia y la frecuencia cardíaca máxima. Estos hallazgos concuerdan con la literatura médica y subrayan la importancia de estas variables en el diagnóstico clínico.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>2. Diferencias por Sexo</h5>
+                        <p>Existe una notable diferencia en la prevalencia de enfermedad cardíaca entre hombres y mujeres, siendo significativamente mayor en hombres. Sin embargo, los patrones de síntomas y factores de riesgo pueden variar, lo que sugiere la necesidad de enfoques diagnósticos específicos por sexo.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>3. Valor Predictivo del Modelo</h5>
+                        <p>El modelo de Random Forest optimizado alcanza una precisión de aproximadamente 85%, con un buen equilibrio entre sensibilidad y especificidad. Esto demuestra el potencial de las técnicas de aprendizaje automático como herramientas de apoyo en el diagnóstico clínico de enfermedades cardíacas.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>4. Implicaciones Clínicas</h5>
+                        <p>Los resultados sugieren que una evaluación integral que incluya el tipo de dolor torácico, pruebas de esfuerzo para determinar la frecuencia cardíaca máxima y evaluación de los vasos coronarios principales puede mejorar significativamente la detección temprana de enfermedad cardíaca. Esto es especialmente relevante en pacientes con múltiples factores de riesgo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Tecnologías y Código</h2>
+                    <p>Este análisis fue realizado utilizando Python con las siguientes bibliotecas y herramientas:</p>
+                    
+                    <div class="d-flex flex-wrap mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Seaborn</span>
+                        <span class="tech-badge">Scikit-Learn</span>
+                        <span class="tech-badge">Random Forest</span>
+                        <span class="tech-badge">GridSearchCV</span>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="https://github.com/tuusuario/heart-disease-analysis" class="btn btn-primary">Ver Código en GitHub</a>
+                        <a href="analysis.py" class="btn btn-outline-primary">Ver Script de Análisis</a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5>Conjunto de Datos</h5>
+                        <p>El dataset utilizado en este análisis es el "Heart Disease UCI Dataset", disponible públicamente en el <a href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank">UCI Machine Learning Repository</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>© 2025 Mi Portafolio. Todos los derechos reservados.</p>
+            <a href="../../index.html" class="btn btn-outline-light mt-2">Volver al Portafolio</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

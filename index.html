@@ -1,177 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Bootstrap CSS (optional) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Your Name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header Section -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>Your Name</h1>
-            <p class="lead">Data Analyst | Visualization Expert | Problem Solver</p>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>About Me</h2>
-                    <p>Brief professional introduction highlighting your background, expertise in data analysis, and what drives your passion for working with data.</p>
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Proyectos de Análisis de Datos</h2>
+        
+        <div class="card mb-5">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="projects/heart-disease-analysis/images/feature_importance.png" class="img-fluid rounded-start" alt="Análisis de factores de riesgo de enfermedades cardíacas">
                 </div>
-                <div class="col-lg-6">
-                    <!-- Profile image or relevant visualization -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Data Analysis Projects</h2>
-            
-            <!-- Project 1 -->
-            <div class="card mb-5">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="project1-image.jpg" class="img-fluid rounded-start" alt="Project 1 visualization">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">Project Title 1</h3>
-                            <p class="card-text">Brief description of the project, including the problem statement, methodology, and key findings.</p>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary">View Project</a>
-                                <a href="#" class="btn btn-outline-secondary">GitHub Repository</a>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Tools used: Python, Pandas, Matplotlib, Scikit-learn</small></p>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">Análisis de Factores de Riesgo de Enfermedades Cardíacas</h3>
+                        <p class="card-text">Análisis exhaustivo de un conjunto de datos médicos para identificar los factores determinantes en el diagnóstico de enfermedades cardíacas. Incluye exploración de datos, visualización avanzada y modelado predictivo con Random Forest.</p>
+                        <div class="d-flex gap-2">
+                            <a href="projects/heart-disease-analysis/index.html" class="btn btn-primary">Ver Proyecto</a>
+                            <a href="https://github.com/tuusuario/heart-disease-analysis" class="btn btn-outline-secondary">GitHub Repository</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 2 (repeat structure) -->
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Technical Skills</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Programming Languages</h3>
-                            <ul class="list-unstyled">
-                                <li>Python</li>
-                                <li>R</li>
-                                <li>SQL</li>
-                                <!-- Add others -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Data Analysis Tools</h3>
-                            <ul class="list-unstyled">
-                                <li>Pandas</li>
-                                <li>NumPy</li>
-                                <li>Scikit-learn</li>
-                                <li>Tableau</li>
-                                <!-- Add others -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Visualization</h3>
-                            <ul class="list-unstyled">
-                                <li>Matplotlib</li>
-                                <li>Seaborn</li>
-                                <li>Plotly</li>
-                                <li>Power BI</li>
-                                <!-- Add others -->
-                            </ul>
-                        </div>
+                        <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Scikit-learn, Matplotlib, Seaborn</small></p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="mb-4">Resume</h2>
-            <p>You can view or download my complete resume by clicking the button below:</p>
-            <a href="resume.pdf" class="btn btn-primary" target="_blank">View Resume</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="text-center mb-4">
-                                <p>Feel free to reach out to me via email or through my social media profiles:</p>
-                                <p>Email: your.email@example.com</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="text-decoration-none">LinkedIn</a>
-                                    <a href="#" class="text-decoration-none">GitHub</a>
-                                    <a href="#" class="text-decoration-none">Twitter</a>
-                                </div>
-                            </div>
+        
+        <div class="card mb-5 bg-white border-dashed">
+            <div class="row g-0">
+                <div class="col-md-4 d-flex align-items-center justify-content-center bg-light p-4">
+                    <div class="text-center text-muted">
+                        <i class="bi bi-bar-chart-line fs-1"></i>
+                        <p class="mt-2">Imagen del proyecto</p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">Análisis de Datos Económicos Globales</h3>
+                        <p class="card-text">Próximamente: Un análisis comparativo de tendencias económicas globales utilizando datos del Índice de Precios al Consumidor de diferentes países.</p>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-secondary" disabled>Próximamente</button>
                         </div>
+                        <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Plotly, Geospatial Analysis</small></p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p>© 2025 Your Name. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </div>
+</section>
