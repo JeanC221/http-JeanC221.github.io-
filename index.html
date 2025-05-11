@@ -1,45 +1,414 @@
-<section id="projects" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Proyectos de Análisis de Datos</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio de Análisis de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
         
-        <div class="card mb-5">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="projects/heart-disease-analysis/images/feature_importance.png" class="img-fluid rounded-start" alt="Análisis de factores de riesgo de enfermedades cardíacas">
+        .hero-section {
+            background: linear-gradient(135deg, #0062E6, #33AEFF);
+            padding: 120px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-image-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero-section text-center" id="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Mi Portafolio de Análisis de Datos</h1>
+            <p class="lead fs-4 mb-5">Transformando datos en insights para impulsar decisiones basadas en evidencia</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#projects" class="btn btn-light btn-lg">Ver Proyectos</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="mb-4">Sobre Mí</h2>
+                    <p class="lead">Soy un analista de datos apasionado por descubrir patrones y extraer conocimientos valiosos de conjuntos de datos complejos.</p>
+                    <p>Mi formación en estadística y programación, combinada con mi curiosidad natural, me permite abordar problemas desde múltiples perspectivas. Disfruto especialmente trabajando en proyectos que tienen un impacto real en la toma de decisiones y en la mejora de procesos.</p>
+                    <p>A lo largo de mi carrera, he desarrollado habilidades en Python, SQL, visualización de datos y modelado predictivo. Mi objetivo es seguir creciendo como profesional en el campo de la ciencia de datos y contribuir a proyectos innovadores.</p>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h3 class="card-title">Análisis de Factores de Riesgo de Enfermedades Cardíacas</h3>
-                        <p class="card-text">Análisis exhaustivo de un conjunto de datos médicos para identificar los factores determinantes en el diagnóstico de enfermedades cardíacas. Incluye exploración de datos, visualización avanzada y modelado predictivo con Random Forest.</p>
-                        <div class="d-flex gap-2">
-                            <a href="projects/heart-disease-analysis/index.html" class="btn btn-primary">Ver Proyecto</a>
-                            <a href="https://github.com/tuusuario/heart-disease-analysis" class="btn btn-outline-secondary">GitHub Repository</a>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3">Especialidades</h4>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Análisis Exploratorio de Datos</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%; background-color: #0062E6;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Visualización de Datos</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #0062E6;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Machine Learning</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #0062E6;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>SQL y Bases de Datos</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #0062E6;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Scikit-learn, Matplotlib, Seaborn</small></p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="card mb-5 bg-white border-dashed">
-            <div class="row g-0">
-                <div class="col-md-4 d-flex align-items-center justify-content-center bg-light p-4">
-                    <div class="text-center text-muted">
-                        <i class="bi bi-bar-chart-line fs-1"></i>
-                        <p class="mt-2">Imagen del proyecto</p>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Proyectos de Análisis de Datos</h2>
+            
+            <!-- Proyecto 1: Análisis de Enfermedades Cardíacas -->
+            <div class="card mb-5">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="project-image-container p-3">
+                            <img src="projects/heart-disease-analysis/images/feature_importance.png" 
+                                 class="project-image rounded" 
+                                 alt="Análisis de factores de riesgo de enfermedades cardíacas">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Análisis de Factores de Riesgo de Enfermedades Cardíacas</h3>
+                            <p class="card-text">Análisis exhaustivo de un conjunto de datos médicos para identificar los factores determinantes en el diagnóstico de enfermedades cardíacas. Incluye exploración de datos, visualización avanzada y modelado predictivo con Random Forest.</p>
+                            <div class="d-flex gap-2">
+                                <a href="projects/heart-disease-analysis/index.html" class="btn btn-primary">Ver Proyecto</a>
+                                <a href="https://github.com/tuusuario/heart-disease-analysis" class="btn btn-outline-secondary">GitHub Repository</a>
+                            </div>
+                            <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Scikit-learn, Matplotlib, Seaborn</small></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h3 class="card-title">Análisis de Datos Económicos Globales</h3>
-                        <p class="card-text">Próximamente: Un análisis comparativo de tendencias económicas globales utilizando datos del Índice de Precios al Consumidor de diferentes países.</p>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-secondary" disabled>Próximamente</button>
+            </div>
+            
+            <!-- Marcador para Proyecto 2 (próximamente) -->
+            <div class="card mb-5">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="bg-light p-3 d-flex align-items-center justify-content-center h-100" style="min-height: 250px;">
+                            <div class="text-center text-muted">
+                                <i class="fas fa-chart-line fa-4x mb-3"></i>
+                                <p>Próximo proyecto en desarrollo</p>
+                            </div>
                         </div>
-                        <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Plotly, Geospatial Analysis</small></p>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Análisis de Datos Económicos Globales</h3>
+                            <p class="card-text">Próximamente: Un análisis comparativo de tendencias económicas globales utilizando datos del Índice de Precios al Consumidor de diferentes países.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary" disabled>Próximamente</button>
+                            </div>
+                            <p class="card-text mt-2"><small class="text-muted">Tecnologías: Python, Pandas, Plotly, Geospatial Analysis</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Habilidades Técnicas</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Lenguajes de Programación</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Python</li>
+                                <li class="mb-2">R</li>
+                                <li class="mb-2">SQL</li>
+                                <li>JavaScript (básico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-database fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Análisis de Datos</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Pandas</li>
+                                <li class="mb-2">NumPy</li>
+                                <li class="mb-2">PostgreSQL</li>
+                                <li>Excel Avanzado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-bar fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Visualización</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Matplotlib</li>
+                                <li class="mb-2">Seaborn</li>
+                                <li class="mb-2">Plotly</li>
+                                <li>Tableau</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Machine Learning</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Scikit-learn</li>
+                                <li class="mb-2">TensorFlow</li>
+                                <li class="mb-2">Regresión</li>
+                                <li>Clasificación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Herramientas</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Git</li>
+                                <li class="mb-2">Jupyter Notebook</li>
+                                <li class="mb-2">VS Code</li>
+                                <li>Docker (básico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 skill-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Habilidades Adicionales</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Estadística</li>
+                                <li class="mb-2">Storytelling con Datos</li>
+                                <li class="mb-2">ETL</li>
+                                <li>Metodologías Ágiles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de CV -->
+    <section id="resume" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Currículum Vitae</h2>
+            <p class="mb-4">Puedes ver mi experiencia profesional y educación completa en mi CV:</p>
+            <a href="#" class="btn btn-primary">Descargar CV</a>
+            
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Educación</h4>
+                            <div class="mb-3">
+                                <h5>Grado en Ciencias de Datos</h5>
+                                <p class="text-muted">Universidad Example • 2018 - 2022</p>
+                            </div>
+                            <div>
+                                <h5>Máster en Análisis de Datos</h5>
+                                <p class="text-muted">Universidad Example • 2022 - 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Experiencia</h4>
+                            <div class="mb-3">
+                                <h5>Analista de Datos Junior</h5>
+                                <p class="text-muted">Empresa Example • 2023 - Presente</p>
+                            </div>
+                            <div>
+                                <h5>Becario en Ciencia de Datos</h5>
+                                <p class="text-muted">Empresa Example • 2022 - 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <div class="row mb-4">
+                                <div class="col-md-4 mb-3 mb-md-0">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h5 class="mb-0">Email</h5>
+                                            <p class="mb-0">tu.email@ejemplo.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 mb-md-0">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h5 class="mb-0">Ubicación</h5>
+                                            <p class="mb-0">Barranquilla, Colombia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-globe fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h5 class="mb-0">Social</h5>
+                                            <div>
+                                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-linkedin"></i></a>
+                                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-github"></i></a>
+                                                <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" placeholder="Asunto" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">Enviar Mensaje</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2">© 2025 Mi Portafolio de Análisis de Datos. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <a href="#hero" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
