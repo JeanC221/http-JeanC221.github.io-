@@ -1,9 +1,3 @@
-"""
-Análisis de Factores de Deserción y Éxito Académico en Estudiantes Universitarios
-================================================================================
-Dataset: students_dropout_academic_success.csv
-"""
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -63,7 +57,7 @@ def load_data(file_path):
         'Unemployment rate': 'Tasa_Desempleo',
         'Inflation rate': 'Tasa_Inflacion',
         'GDP': 'PIB',
-        'Target': 'Estado_Academico'
+        'target': 'Estado_Academico'
     }
     
     existing_columns = {}
