@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Deserción y Éxito Académico | Jean C. Herrán</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .project-header {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            padding: 80px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .analysis-section {
+            margin: 60px 0;
+        }
+        
+        .visualization {
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .visualization:hover {
+            transform: translateY(-5px);
+        }
+        
+        .visualization img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .methodology-card {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        .key-finding {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .key-finding h5 {
+            color: #3498db;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background-color: #eef2f7;
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        
+        .stat-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3498db;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        
+        .data-definition {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .data-definition h5 {
+            color: #3498db;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">Jean C. Herrán</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#about">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container text-center">
+            <h1>Análisis de Deserción y Éxito Académico Estudiantil</h1>
+            <p class="lead">Identificación de factores que influyen en el rendimiento y permanencia de estudiantes universitarios</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4">Resumen del Proyecto</h2>
+                <p>La deserción estudiantil representa un desafío significativo para las instituciones de educación superior, con impactos tanto en los estudiantes como en las universidades. Este proyecto analiza un conjunto de datos comprensivo de más de 4,000 estudiantes universitarios para identificar los factores académicos, socioeconómicos y demográficos que influyen en la deserción y el éxito académico.</p>
+                
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="stat-card text-center">
+                            <div class="stat-value">4,424</div>
+                            <div class="stat-label">Estudiantes analizados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="stat-card text-center">
+                            <div class="stat-value">37</div>
+                            <div class="stat-label">Variables estudiadas</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card text-center">
+                            <div class="stat-value">83%</div>
+                            <div class="stat-label">Precisión del modelo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-primary" role="alert">
+                    <strong>Hallazgo principal:</strong> El rendimiento académico en el primer semestre y la situación financiera (ser becario o deudor) son los predictores más significativos del éxito o deserción académica.
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Descripción del Dataset</h2>
+                    <p>El conjunto de datos "Students' Academic Success and Dropout" contiene información detallada sobre 4,424 estudiantes universitarios con 37 variables que abarcan información demográfica, académica, socioeconómica y contextual. Este dataset es particularmente valioso por su alcance, ya que cubre todo el ciclo académico desde la inscripción hasta la graduación o deserción.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="data-definition">
+                                <h5>Variables Demográficas</h5>
+                                <ul class="mb-0">
+                                    <li><strong>Edad al momento de inscripción:</strong> Edad del estudiante cuando inició sus estudios</li>
+                                    <li><strong>Género:</strong> Género del estudiante (categórico)</li>
+                                    <li><strong>Estado civil:</strong> Estado civil del estudiante (categórico)</li>
+                                    <li><strong>Nacionalidad:</strong> País de origen del estudiante</li>
+                                    <li><strong>Desplazado:</strong> Si el estudiante se ha desplazado de su lugar de origen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="data-definition">
+                                <h5>Variables Académicas</h5>
+                                <ul class="mb-0">
+                                    <li><strong>Nota de admisión:</strong> Calificación obtenida en la prueba de ingreso</li>
+                                    <li><strong>Curso:</strong> Programa académico cursado</li>
+                                    <li><strong>Asistencia diurna/nocturna:</strong> Modalidad de asistencia</li>
+                                    <li><strong>Unidades curriculares:</strong> Materias inscritas, aprobadas y evaluadas</li>
+                                    <li><strong>Calificaciones:</strong> Notas obtenidas en los semestres</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="data-definition">
+                                <h5>Variables Socioeconómicas</h5>
+                                <ul class="mb-0">
+                                    <li><strong>Calificación de los padres:</strong> Nivel educativo del padre y la madre</li>
+                                    <li><strong>Ocupación de los padres:</strong> Profesión u ocupación de los padres</li>
+                                    <li><strong>Becario:</strong> Si el estudiante recibe beca (binario)</li>
+                                    <li><strong>Deudor:</strong> Si el estudiante tiene deudas (binario)</li>
+                                    <li><strong>Tasas al día:</strong> Si el estudiante tiene sus pagos al día</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="data-definition">
+                                <h5>Variables Contextuales</h5>
+                                <ul class="mb-0">
+                                    <li><strong>Tasa de desempleo:</strong> Tasa de desempleo del país durante el período</li>
+                                    <li><strong>Tasa de inflación:</strong> Tasa de inflación del país durante el período</li>
+                                    <li><strong>PIB:</strong> Producto Interno Bruto del país durante el período</li>
+                                    <li><strong>Estado académico (Target):</strong> Variable objetivo que indica si el estudiante se graduó, abandonó o sigue matriculado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Metodología</h2>
+                    <p>Este análisis siguió un enfoque estructurado de ciencia de datos, combinando técnicas de análisis exploratorio, visualización y modelado predictivo:</p>
+                    
+                    <div class="methodology-card mb-4">
+                        <h5>1. Preparación y Exploración de Datos</h5>
+                        <p>Se realizó un análisis exploratorio detallado para comprender la estructura del dataset, identificar valores atípicos y examinar las distribuciones de las variables. Esta fase incluyó:</p>
+                        <ul>
+                            <li>Limpieza y preparación de datos (manejo de valores faltantes, codificación de variables categóricas)</li>
+                            <li>Análisis descriptivo para comprender las distribuciones y tendencias centrales</li>
+                            <li>Examen de correlaciones entre variables para identificar relaciones significativas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="methodology-card mb-4">
+                        <h5>2. Análisis Visual</h5>
+                        <p>Se crearon visualizaciones específicas para examinar las relaciones entre variables clave y el estado académico:</p>
+                        <ul>
+                            <li>Distribución general de estados académicos (graduados, desertores, matriculados)</li>
+                            <li>Análisis de factores demográficos (edad, género) y su relación con la deserción</li>
+                            <li>Visualización de factores socioeconómicos (becas, deudas) y su impacto</li>
+                            <li>Exploración del rendimiento académico en los primeros semestres como predictor</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="methodology-card mb-4">
+                        <h5>3. Modelado Predictivo</h5>
+                        <p>Se desarrolló un modelo de clasificación para predecir el estado académico final de los estudiantes:</p>
+                        <ul>
+                            <li>Preprocesamiento de datos (escalado de variables numéricas, codificación one-hot para variables categóricas)</li>
+                            <li>Implementación de un modelo Random Forest por su capacidad para manejar datos mixtos y capturar interacciones complejas</li>
+                            <li>Evaluación del modelo mediante validación cruzada y métricas de rendimiento (precisión, recall, F1-score)</li>
+                            <li>Análisis de importancia de características para identificar los factores más influyentes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="methodology-card">
+                        <h5>4. Interpretación y Recomendaciones</h5>
+                        <p>Finalmente, se interpretaron los resultados del modelo y los hallazgos clave:</p>
+                        <ul>
+                            <li>Identificación de los factores de riesgo más significativos para la deserción</li>
+                            <li>Reconocimiento de factores protectores que promueven el éxito académico</li>
+                            <li>Desarrollo de recomendaciones prácticas para instituciones educativas</li>
+                            <li>Validación de los hallazgos con la literatura existente sobre deserción estudiantil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <h2 class="text-center mb-5">Visualizaciones y Hallazgos Clave</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/academic_status_distribution.png" class="card-img-top" alt="Distribución de Estado Académico">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribución de Estado Académico</h5>
+                                <p class="card-text">El gráfico muestra la distribución general de estudiantes según su estado académico. Aproximadamente un 34% de los estudiantes abandonaron sus estudios, un 47% se graduaron exitosamente, y un 19% continúan matriculados. Esta proporción significativa de deserción (más de un tercio) subraya la importancia de identificar factores de riesgo temprano.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/gender_academic_status.png" class="card-img-top" alt="Distribución por Género y Estado Académico">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribución por Género y Estado Académico</h5>
+                                <p class="card-text">El análisis por género revela diferencias significativas en las tasas de deserción y graduación. Las estudiantes mujeres presentan tasas de graduación más altas (52% vs 43% en hombres) y tasas de deserción más bajas (30% vs 38% en hombres). Estos datos sugieren que existen factores específicos de género que influyen en la persistencia académica.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/age_academic_status.png" class="card-img-top" alt="Distribución por Edad y Estado Académico">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribución por Edad y Estado Académico</h5>
+                                <p class="card-text">La edad al momento de inscripción emerge como un factor relevante. Los estudiantes que ingresan a edades más avanzadas (mayores de 25 años) presentan tasas de deserción significativamente mayores. Esto puede estar relacionado con responsabilidades adicionales (trabajo, familia) que compiten con el tiempo dedicado a los estudios. Por otro lado, los estudiantes que ingresan entre 18-22 años muestran las tasas de graduación más altas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/economic_factors_academic_status.png" class="card-img-top" alt="Factores Económicos y Estado Académico">
+                            <div class="card-body">
+                                <h5 class="card-title">Factores Económicos y Estado Académico</h5>
+                                <p class="card-text">Los factores económicos muestran una correlación notable con el éxito académico. Los estudiantes con estado de deudor presentan casi el doble de probabilidad de abandonar sus estudios en comparación con aquellos sin deudas. De manera similar, ser becario está fuertemente asociado con mayores tasas de graduación y menor deserción, lo que destaca el impacto positivo del apoyo financiero en la persistencia académica.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/academic_performance_status.png" class="card-img-top" alt="Rendimiento Académico y Estado Final">
+                            <div class="card-body">
+                                <h5 class="card-title">Rendimiento Académico y Estado Final</h5>
+                                <p class="card-text">El rendimiento en el primer semestre emerge como el predictor más poderoso del éxito académico final. Los estudiantes que eventualmente abandonan muestran calificaciones significativamente más bajas y menor número de unidades aprobadas en su primer semestre. Esta diferencia es tan marcada que permite identificar estudiantes en riesgo muy temprano en su trayectoria académica, posibilitando intervenciones oportunas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization">
+                        <div class="card">
+                            <img src="images/correlation_matrix.png" class="card-img-top" alt="Matriz de Correlación">
+                            <div class="card-body">
+                                <h5 class="card-title">Matriz de Correlación entre Variables</h5>
+                                <p class="card-text">El análisis de correlación muestra patrones interesantes entre las variables. Las notas y unidades aprobadas entre el primer y segundo semestre muestran alta correlación positiva, indicando consistencia en el rendimiento. La correlación negativa entre la variable objetivo y factores como "ser deudor" confirma el impacto negativo de las dificultades financieras. También se observa una correlación entre el nivel educativo de los padres y el desempeño académico de los estudiantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Resultados del Modelo Predictivo</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <img src="images/confusion_matrix.png" class="card-img-top" alt="Matriz de Confusión">
+                                <div class="card-body">
+                                    <h5 class="card-title">Matriz de Confusión</h5>
+                                    <p class="card-text">La matriz de confusión muestra el rendimiento del modelo en la clasificación de los tres estados académicos. El modelo logra una precisión general del 83%, con un mejor desempeño en la identificación de estudiantes graduados y desertores que en la predicción de estudiantes que continúan matriculados.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <img src="images/feature_importance.png" class="card-img-top" alt="Importancia de Características">
+                                <div class="card-body">
+                                    <h5 class="card-title">Importancia de Características</h5>
+                                    <p class="card-text">El análisis de importancia de características revela que las variables relacionadas con el rendimiento en el primer semestre (notas y unidades aprobadas) son los predictores más poderosos del éxito académico. Otros factores relevantes incluyen la edad al inscribirse, el estado financiero (becario/deudor) y el nivel educativo de los padres.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Métricas de Evaluación del Modelo</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Estado Académico</th>
+                                            <th>Precisión</th>
+                                            <th>Recall</th>
+                                            <th>F1-Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Deserción</td>
+                                            <td>0.85</td>
+                                            <td>0.82</td>
+                                            <td>0.83</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Graduado</td>
+                                            <td>0.87</td>
+                                            <td>0.89</td>
+                                            <td>0.88</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Matriculado</td>
+                                            <td>0.72</td>
+                                            <td>0.70</td>
+                                            <td>0.71</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="mt-3 mb-0">El modelo muestra un rendimiento sólido en las tres categorías, con métricas particularmente fuertes para la predicción de graduados. La categoría "Matriculado" presenta un desafío mayor, posiblemente debido a su naturaleza transitoria y la menor cantidad de ejemplos disponibles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Conclusiones y Recomendaciones</h2>
+                    
+                    <div class="key-finding">
+                        <h5>1. El Primer Semestre es Crítico</h5>
+                        <p>El rendimiento académico durante el primer semestre emerge como el predictor más potente del éxito o fracaso académico a largo plazo. Los estudiantes que obtienen bajas calificaciones o aprueban pocas unidades en este período tienen un riesgo significativamente mayor de deserción.</p>
+                        <p><strong>Recomendación:</strong> Implementar programas de intervención temprana y sistemas de alerta para identificar y apoyar a estudiantes con dificultades durante las primeras semanas del primer semestre. Ofrecer tutorías, talleres de estrategias de estudio y apoyo académico intensivo durante este período crítico.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>2. Los Factores Financieros son Determinantes</h5>
+                        <p>El estado financiero del estudiante (ser deudor o becario) tiene un impacto sustancial en la probabilidad de deserción o graduación. El estrés financiero emerge como una barrera significativa para la continuidad académica.</p>
+                        <p><strong>Recomendación:</strong> Ampliar programas de becas y apoyo financiero, especialmente para estudiantes de bajos recursos. Implementar planes de pago flexibles y asesoramiento financiero para evitar la acumulación de deudas. Considerar la creación de empleos estudiantiles dentro del campus que permitan a los estudiantes generar ingresos sin comprometer sus estudios.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>3. La Edad de Ingreso Influye en la Persistencia</h5>
+                        <p>Los estudiantes que ingresan a edades más avanzadas enfrentan mayores desafíos para completar sus estudios, posiblemente debido a responsabilidades familiares o laborales concurrentes.</p>
+                        <p><strong>Recomendación:</strong> Desarrollar modalidades de estudio más flexibles para estudiantes mayores (cursos nocturnos, educación a distancia, programas a tiempo parcial). Ofrecer servicios de apoyo específicos como guardería para estudiantes con hijos y asesoría para equilibrar trabajo y estudios.</p>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <h5>4. Existen Diferencias de Género Significativas</h5>
+                        <p>Las mujeres muestran tasas de graduación más altas y menor deserción que los hombres en este conjunto de datos, lo que sugiere factores específicos de género que influyen en la persistencia académica.</p>
+                        <p><strong>Recomendación:</strong> Investigar más a fondo las razones detrás de estas diferencias y desarrollar programas de apoyo adaptados a las necesidades específicas de cada género. Considerar comunidades de aprendizaje y grupos de mentoría que aborden los desafíos particulares que enfrentan hombres y mujeres en el entorno académico.</p>
+                    </div>
+                    
+                    <div class="alert alert-success mt-4" role="alert">
+                        <h5 class="alert-heading">Implicaciones para las Instituciones</h5>
+                        <p class="mb-0">Este análisis demuestra que la deserción estudiantil no es un evento aleatorio, sino un fenómeno predecible influenciado por factores identificables. Las instituciones educativas pueden utilizar estos hallazgos para desarrollar sistemas de alerta temprana y programas de intervención específicos que aborden los factores de riesgo más significativos. El modelo predictivo desarrollado en este proyecto puede servir como herramienta para identificar estudiantes en riesgo y asignar recursos de apoyo de manera eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Tecnologías y Código</h2>
+                    <p>Este análisis fue realizado utilizando Python con las siguientes bibliotecas y herramientas:</p>
+                    
+                    <div class="d-flex flex-wrap mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Seaborn</span>
+                        <span class="tech-badge">Scikit-Learn</span>
+                        <span class="tech-badge">Random Forest</span>
+                        <span class="tech-badge">Pipeline</span>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="https://github.com/JeanC221/student-dropout-analysis" class="btn btn-primary">Ver Código en GitHub</a>
+                        <a href="analysis.py" class="btn btn-outline-primary">Ver Script de Análisis</a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5>Conjunto de Datos</h5>
+                        <p>El dataset utilizado en este análisis es el "Students' Academic Success and Dropout" que contiene información sobre el rendimiento académico de estudiantes universitarios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>© 2025 Jean C. Herrán | Data Scientist & Analista de Datos</p>
+            <a href="../../index.html" class="btn btn-outline-light mt-2">Volver al Portafolio</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
